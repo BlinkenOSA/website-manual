@@ -1,0 +1,207 @@
+@font-face {
+  font-family: "Suisse Intl";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://www.archivum.org/fonts/SuisseIntl-Regular-WebXL.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://www.archivum.org/fonts/SuisseIntl-Medium-WebXL.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("https://www.archivum.org/fonts/SuisseIntl-SemiBold-WebXL.woff2") format("woff2");
+}
+
+:root {
+  --osa-white: #ffffff;
+  --osa-mustard-1000: #dccc7a;
+  --osa-mustard-200: #f8f5e4;
+  --osa-orange-1000: #ed8251;
+  --osa-orange-200: #fbe6dc;
+  --osa-lilac-1000: #bfb2b7;
+  --osa-lilac-200: #f2f0f1;
+  --osa-aqua-1000: #8ab3b8;
+  --osa-aqua-200: #e8f0f1;
+  --osa-sage-1000: #b3c5b4;
+  --osa-sage-200: #f0f3f0;
+  --osa-neutral-1000: #000000;
+  --osa-neutral-900: #333333;
+  --osa-neutral-800: #494949;
+  --osa-neutral-700: #616161;
+  --osa-neutral-400: #a4a4a4;
+  --osa-neutral-200: #d2d2d2;
+  --osa-neutral-100: #e9e9e9;
+  --md-text-font: "Suisse Intl", Arial, Helvetica, sans-serif;
+  --md-code-font: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --md-accent-fg-color: var(--osa-orange-1000);
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--osa-white);
+  --md-primary-fg-color--light: var(--osa-white);
+  --md-primary-fg-color--dark: var(--osa-neutral-100);
+  --md-primary-bg-color: var(--osa-neutral-1000);
+  --md-primary-bg-color--light: rgb(0 0 0 / 70%);
+  --md-default-bg-color: var(--osa-white);
+  --md-default-fg-color: var(--osa-neutral-1000);
+  --md-default-fg-color--light: var(--osa-neutral-700);
+  --md-default-fg-color--lighter: var(--osa-neutral-400);
+  --md-default-fg-color--lightest: var(--osa-neutral-200);
+  --md-typeset-color: var(--osa-neutral-1000);
+  --md-typeset-a-color: var(--osa-neutral-1000);
+  --md-code-bg-color: var(--osa-sage-200);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--osa-neutral-1000);
+  --md-primary-fg-color--light: var(--osa-neutral-900);
+  --md-primary-fg-color--dark: var(--osa-neutral-1000);
+  --md-primary-bg-color: var(--osa-white);
+  --md-primary-bg-color--light: rgb(255 255 255 / 70%);
+  --md-default-bg-color: var(--osa-neutral-1000);
+  --md-default-fg-color: var(--osa-white);
+  --md-default-fg-color--light: var(--osa-neutral-200);
+  --md-default-fg-color--lighter: var(--osa-neutral-400);
+  --md-default-fg-color--lightest: var(--osa-neutral-700);
+  --md-typeset-color: var(--osa-white);
+  --md-typeset-a-color: var(--osa-white);
+  --md-code-bg-color: var(--osa-neutral-900);
+  --md-footer-bg-color: var(--osa-neutral-900);
+  --md-footer-bg-color--dark: var(--osa-neutral-1000);
+}
+
+.md-header {
+  background: var(--md-primary-fg-color);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  box-shadow: none;
+}
+
+.md-header__title {
+  font-weight: 600;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.6rem;
+  width: auto;
+}
+
+[data-md-color-scheme="slate"] .md-header__button.md-logo img {
+  filter: invert(1);
+}
+
+.md-nav__title,
+.md-nav__link,
+.md-tabs__link {
+  font-family: var(--md-text-font);
+}
+
+.md-nav__link--active,
+.md-nav__link:focus,
+.md-nav__link:hover {
+  color: var(--osa-orange-1000);
+}
+
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  color: inherit;
+  font-weight: 400;
+  letter-spacing: 0;
+  scroll-margin-top: 5rem;
+}
+
+.md-typeset h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.md-typeset h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.md-typeset h3 {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.md-typeset strong,
+.md-typeset table:not([class]) th {
+  font-weight: 600;
+}
+
+.md-typeset a {
+  text-decoration-color: var(--osa-orange-1000);
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.15em;
+}
+
+.md-typeset a:focus,
+.md-typeset a:hover {
+  color: var(--osa-neutral-700);
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:focus,
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: var(--osa-neutral-200);
+}
+
+.md-typeset__table {
+  min-width: 100%;
+}
+
+.md-typeset table:not([class]) {
+  display: table;
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+[data-md-color-scheme="default"] .md-typeset table:not([class]) th {
+  background: var(--osa-neutral-100);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background: var(--osa-neutral-900);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0;
+}
+
+.md-footer-meta {
+  background: var(--osa-neutral-1000);
+}
+
+@media screen and (max-width: 59.9844em) {
+  .md-typeset h1 {
+    font-size: 2rem;
+  }
+
+  .md-typeset h2 {
+    font-size: 1.5rem;
+  }
+
+  .md-typeset h3 {
+    font-size: 1rem;
+  }
+}
