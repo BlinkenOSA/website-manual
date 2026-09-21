@@ -17,7 +17,7 @@ Use this checklist for every new record and substantial update.
 - [ ] The visible body was entered in the field the frontend renders.
 - [ ] Dynamic-zone components are in the intended order.
 - [ ] ContentImage placement was selected deliberately.
-- [ ] YouTube components contain a supported YouTube URL and caption.
+- [ ] YouTube components contain a supported YouTube URL and caption. (No extra parameters at the end of the URL.)
 - [ ] PDFs open and download; their size is reasonable.
 - [ ] IFrames have been tested on desktop and mobile.
 

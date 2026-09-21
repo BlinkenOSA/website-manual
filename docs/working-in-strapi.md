@@ -6,6 +6,8 @@ Strapi stores the website's structured content, translations, media, and relatio
 
 All current collection types use **Draft & Publish**. Most also use internationalization for English and Hungarian.
 
+For a general introduction to the editing interface, see Strapi's official [Content Manager documentation](https://docs.strapi.io/cms/features/content-manager). The instructions below describe the conventions specific to this website.
+
 ## Standard editing workflow
 
 1. Open **Content Manager** in Strapi.
@@ -17,6 +19,8 @@ All current collection types use **Draft & Publish**. Most also use internationa
 7. Add related material only after the related records already exist.
 8. Save the draft, preview or review it, then publish.
 9. Switch locale, complete the translation, and publish that locale separately.
+
+Official Strapi references: [creating and editing content](https://docs.strapi.io/cms/features/content-manager#creating-writing-content), [Draft & Publish](https://docs.strapi.io/cms/features/draft-and-publish), and [internationalization](https://docs.strapi.io/cms/features/internationalization).
 
 !!! warning "Saving is not publishing"
     **Save** stores a draft. The public website receives only the published version. A translated locale can remain unpublished even when the other locale is live.
@@ -35,6 +39,8 @@ When adding a translation:
 - publish the translated locale;
 - open the public page in that language.
 
+See Strapi's [internationalization documentation](https://docs.strapi.io/cms/features/internationalization) for creating, switching, and publishing locales.
+
 ## Titles, names, and slugs
 
 The `Slug` is the final readable part of a public URL. For example, `research-room` may appear in `/collections/research-room`.
@@ -46,12 +52,16 @@ The `Slug` is the final readable part of a public URL. For example, `research-ro
 
 Some pages are reachable only when their slug is also present in the website's coded menu. Creating a Page record does not automatically add it to navigation.
 
+In Strapi, slugs are stored in a UID field. See the [Content Manager field reference](https://docs.strapi.io/cms/features/content-manager#creating-writing-content) for the UID field and its regeneration control.
+
 ## Rich text and the Content page builder
 
 Strapi has two different editing patterns:
 
 - A **Blocks** field is one rich-text document. It is used for fields such as Staff `Bio`, Job `Content`, or Publication `Description`.
 - A **dynamic zone** is an ordered list of components. It is usually named `Content` and is used for full page bodies.
+
+Strapi's Content Manager guide explains the [Blocks editor](https://docs.strapi.io/cms/features/content-manager#creating-writing-content), [components](https://docs.strapi.io/cms/features/content-manager#components), and [dynamic zones](https://docs.strapi.io/cms/features/content-manager#dynamic-zones), including how to add and reorder them.
 
 In rich text:
 
@@ -75,6 +85,8 @@ Before uploading a file:
 - upload PDFs as files, not images.
 
 The website generates responsive image choices from Strapi formats. A missing image can leave a card, header, or profile visually incomplete even where the schema does not require one.
+
+See Strapi's official [Media Library documentation](https://docs.strapi.io/cms/features/media-library) for uploading, editing, replacing, organizing, and deleting assets.
 
 ## Links
 
@@ -105,9 +117,13 @@ Page, Collection, Project, Entry, News, and Event records can relate to other re
 - A relation does not embed the other record's full content; it creates a linked card using its title, image, teaser, type, and slug.
 - Self-relations have `Source` and `Destination` fields because of how Strapi stores the two sides. Either side is collected by the frontend where the naming matches.
 
+See Strapi's guide to [relational fields](https://docs.strapi.io/cms/features/content-manager#relational-fields) for selecting, searching, opening, and reordering related records.
+
 ## Drafts, updates, and removal
 
 - For a new record, publish only when all required locales and media are ready.
 - For an update, save and publish the changed locale.
 - To remove content from the public site without deleting it, unpublish it.
 - Before deleting a record, remove incoming relations and check whether menu or external-page configuration points to it.
+
+For the corresponding controls, see Strapi's [Draft & Publish documentation](https://docs.strapi.io/cms/features/draft-and-publish) and its instructions for [deleting content](https://docs.strapi.io/cms/features/content-manager#deleting-content).

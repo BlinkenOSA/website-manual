@@ -10,17 +10,18 @@ The distinction matters: a field can exist in Strapi without being visible on th
 ## Start here
 
 1. Read [Working in Strapi](working-in-strapi.md) for the normal editing and translation workflow.
-2. Use [Content components](components.md) when assembling a page body.
-3. Look up the relevant [collection type](collection-types/editorial-content.md) before creating a record.
-4. Complete the [publishing checklist](publishing-checklist.md) before publishing.
+2. Check [Profiles and visual identity](profiles.md) to understand the section colours and icons controlled by `Profile`.
+3. Use [Content components](components.md) when assembling a page body.
+4. Look up the relevant [content type](collection-types/index.md) to see exactly where every field appears on the website.
+5. Complete the [publishing checklist](publishing-checklist.md) before publishing.
 
 ## Content model at a glance
 
 | Group | Collection types | Main purpose |
 | --- | --- | --- |
-| Editorial pages | Page, Collection, Project, Entry, News, Event, External Page | Public pages, cards, detail pages, calendar entries, and related material |
-| People and opportunities | Staff, Fellow, Intern, Job | Profiles, staff activity tabs, vacancies, and internships |
-| Homepage and supporting data | Home Page Carousel, Credo, Annual Report, Appearance, Course, Publication, URL Redirects | Homepage panels, annual-report cards, staff tabs, and URL management |
+| Editorial pages | Page, Collection, Project, Entry, News, Event, External Page, Annual Report | Public pages, cards, detail pages, calendar entries, annual reports, and related material |
+| People and opportunities | Staff, Appearance, Course, Publication, Fellow, Intern, Job | Profiles, staff activity tabs, vacancies, and internships |
+| Homepage and site administration | Home Page Carousel, Credo, URL Redirects | Homepage-specific panels and URL management |
 
 ## Terminology used in this manual
 

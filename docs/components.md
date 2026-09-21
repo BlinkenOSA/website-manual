@@ -1,24 +1,8 @@
 # Content components
 
-The `Content` field is a page builder. Each item becomes one visible section, in the order shown in Strapi. Not every collection type allows every component.
+The `Content` field is a page builder. Each item becomes one visible section, in the order shown in Strapi. Profile-sensitive components use the colours and icons described in [Profiles and visual identity](profiles.md).
 
-## Availability by collection type
-
-| Component | Page | Entry | News | Event | Collection | Project | External Page |
-| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| ContentImage | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| ContentFull | ✓ | ✓ | ✓ | ✓ | — | ✓ | — |
-| ImageGallery | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — |
-| Quote | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — |
-| TextBox | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — |
-| Image | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — |
-| Video | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — |
-| PDF | ✓ | ✓ | ✓ | ✓ | — | — | — |
-| DividerIcon | ✓ | ✓ | ✓ | ✓ | — | — | — |
-| DividerLine | ✓ | ✓ | ✓ | ✓ | — | — | — |
-| IFrame | ✓ | — | — | — | — | — | — |
-
-## Contents components
+## Components (contents group)
 
 ### ContentImage
 
@@ -31,6 +15,12 @@ Combines rich text with zero or more images.
 | `ImagePlacement` | `Left` or `Right` creates a narrow image column beside the text. `Full` places large images above the text. With no value, only the text is shown. |
 
 Use this when an image directly supports a particular passage. On small screens the columns stack.
+
+#### Left alignment example
+
+![ContentImage using Left alignment, with an image caption displayed beneath the image](assets/content-image-right-with-caption.png)
+
+*`ImagePlacement: Left` with a visible image caption.*
 
 ### ContentFull
 
@@ -48,6 +38,12 @@ Use this for ordinary text sections without side media.
 
 Keep a gallery visually coherent. Captions are used in the lightbox.
 
+#### ImageGallery example
+
+![An ImageGallery displaying three archival photographs in a responsive row](assets/image-gallery-example.png)
+
+*An ImageGallery with three images displayed side by side on a wide screen.*
+
 ### Quote
 
 | Field | Result on the website |
@@ -55,6 +51,12 @@ Keep a gallery visually coherent. Captions are used in the lightbox.
 | `Quote` | Plain text displayed as a large, profile-coloured quotation block. |
 
 This is plain text, not the rich-text editor. Include quotation marks only if editorial style requires them.
+
+#### Quote example
+
+![A large quotation with a profile-coloured quotation mark](assets/quote-example.png)
+
+*A Quote component displayed with the page profile's accent colour.*
 
 ### TextBox
 
@@ -65,7 +67,13 @@ This is plain text, not the rich-text editor. Include quotation marks only if ed
 
 Use this for a callout, short practical information, or a highlighted aside.
 
-## Media components
+#### TextBox example
+
+![Text displayed inside the visually distinct TextBox component](assets/text-box-example.png)
+
+*A TextBox used to emphasize an introductory passage.*
+
+## Components (media group)
 
 ### Image
 
@@ -75,6 +83,16 @@ Use this for a callout, short practical information, or a highlighted aside.
 | `Caption` | Optional visible caption; also used to describe the lightbox image. |
 
 In a ContentImage component the size follows `ImagePlacement`. Added directly to the dynamic zone, it spans the content width.
+
+#### Image and lightbox example
+
+![An Image component showing an archival storage photograph with its caption](assets/image-component-example.png){ width="420" style="display: block; margin-inline: auto;" }
+
+*The Image component as it appears within the page.*
+
+![The same archival storage photograph enlarged in the colour lightbox view, with its caption along the bottom](assets/image-component-lightbox-example.png)
+
+*Selecting the image opens the larger colour version in the lightbox. Its caption remains visible below the image.*
 
 ### Video
 
@@ -87,6 +105,15 @@ In a ContentImage component the size follows `ImagePlacement`. Added directly to
 !!! warning
     Supply a YouTube URL. A file in `Video` without `YouTube` produces an empty section.
 
+!!! note "Use a clean YouTube URL"
+    Enter the video URL without extra parameters, such as a starting time (`&t=90s` or `?start=90`) or an embed URL (`youtube.com/embed/...`). Use `https://youtu.be/VIDEO_ID` or `https://www.youtube.com/watch?v=VIDEO_ID` only. The frontend extracts the video ID from these two URL formats; extra text can prevent the player from loading.
+
+#### Video example
+
+![An embedded YouTube player with its video caption displayed immediately below](assets/video-component-example.png)
+
+*A Video component showing the YouTube player and its required caption within the page content.*
+
 ### PDF
 
 | Field | Result on the website |
@@ -96,7 +123,13 @@ In a ContentImage component the size follows `ImagePlacement`. Added directly to
 
 Check the file size and document accessibility before publishing.
 
-## Components components
+#### PDF example
+
+![A PDF component showing its download button, page controls, and an embedded document page](assets/pdf-component-example.png)
+
+*The desktop PDF viewer provides a download button and controls for moving between document pages.*
+
+## Components (components group)
 
 ### DividerIcon and DividerLine
 
@@ -107,6 +140,18 @@ Both components use `Placement`: `Left`, `Right`, or `Full`.
 
 They separate long sections but should be used sparingly.
 
+#### DividerLine example
+
+![A thin profile-coloured DividerLine separating two passages of page content](assets/divider-line-example.png)
+
+*A DividerLine separating two sections. Its colour follows the page's selected profile.*
+
+#### DividerIcon example
+
+![A profile-coloured Public Programs icon separating two sections of page content](assets/divider-icon-example.png)
+
+*A DividerIcon between two sections. The selected profile determines both the category icon and its colour.*
+
 ### IFrame
 
 | Field | Result on the website |
@@ -114,6 +159,8 @@ They separate long sections but should be used sparingly.
 | `Source` | Required URL loaded in a borderless, full-width frame with a fixed minimum height. |
 
 Only Page records can add this component. The embedded service must permit framing and should be tested on desktop and mobile. Never paste untrusted URLs.
+
+Currently, the IFrame component is used only to embed Research Room slot registration on the [Research Room booking page](https://archivum.org/collections/research-room-booking).
 
 ### DateApprox.
 

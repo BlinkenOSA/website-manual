@@ -4,11 +4,32 @@ site_description: Editorial guide for publishing website content with Strapi
 nav:
   - Home: index.md
   - Working in Strapi: working-in-strapi.md
+  - Profiles and visual identity: profiles.md
   - Content components: components.md
   - Collection types:
-      - Pages and editorial content: collection-types/editorial-content.md
-      - People and opportunities: collection-types/people.md
-      - Homepage and supporting data: collection-types/supporting.md
+      - Overview: collection-types/index.md
+      - Homepage and site administration:
+          - Home Page Carousel: collection-types/home-page-carousel.md
+          - Credo: collection-types/credo.md
+          - URL Redirects: collection-types/url-redirects.md
+      - Pages and editorial content:
+          - Page: collection-types/page.md
+          - News: collection-types/news.md
+          - Event: collection-types/event.md
+          - Entry: collection-types/entry.md
+          - Collection: collection-types/collection.md
+          - Project: collection-types/project.md
+          - External Page: collection-types/external-page.md
+      - Special content types:
+          - Annual Report: collection-types/annual-report.md
+          - Staff:
+              - Staff records: collection-types/staff.md
+              - Appearances: collection-types/appearance.md
+              - Courses: collection-types/course.md
+              - Publications: collection-types/publication.md
+          - Fellow: collection-types/fellow.md
+          - Intern: collection-types/intern.md
+          - Job: collection-types/job.md
   - Publishing checklist: publishing-checklist.md
   - Implementation notes: implementation-notes.md
 
@@ -56,6 +77,9 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
   - pymdownx.superfences
 
 extra_css:
