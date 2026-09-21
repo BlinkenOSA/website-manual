@@ -63,7 +63,6 @@ This is plain text, not the rich-text editor. Include quotation marks only if ed
 | Field | Result on the website |
 | --- | --- |
 | `Text` | Required rich text inside a visually distinct box. |
-| `Image` | Present in Strapi but **not rendered by the current website**. |
 
 Use this for a callout, short practical information, or a highlighted aside.
 

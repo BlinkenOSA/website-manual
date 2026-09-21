@@ -7,11 +7,8 @@ This page records current behaviour that can surprise editors. It is also a main
 | Area | Current behaviour | Editorial workaround |
 | --- | --- | --- |
 | Collection and Project `ContentOld` | Required in Strapi but never fetched/rendered. The optional dynamic-zone `Content` is the visible body. | Keep `ContentOld` minimal if validation requires it; build the real page in `Content`. |
-| Job teaser | Schema calls the field `ContentHighglight`; frontend asks for `ContentHighlight`. | No reliable editorial workaround. Put essential summary in the title/body until code and schema agree. |
 | URL Redirect status | Schema supplies `Permanent`; frontend reads `StatusCode`. | Coordinate with a developer. Current generated redirects are temporary. |
-| News self-relation | Schema uses `RelatedNewsDesination` (misspelled); related-material code expects `RelatedNewsDestination`. | Do not assume the destination side will appear; verify on the public page. |
 | Video upload | `media.video.Video` can store a file, but the renderer only handles `YouTube`. | Always supply a supported YouTube URL. |
-| TextBox image | `contents.text-box.Image` exists but the renderer ignores it. | Use a separate Image or ContentImage component. |
 | Collection Library type | `Library` is a schema option, but collection-card routing has no Library route. | Do not make Library the first `ContentTypes` value without developer review. |
 
 ## Fields intentionally stored but not visibly rendered
