@@ -1,0 +1,18 @@
+version: "3.3"
+
+services:
+  website-manual:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: website-manual:latest
+    restart: unless-stopped
+    ports:
+      - "${AMS_MANUAL_BIND_ADDRESS:-127.0.0.1}:${AMS_MANUAL_PORT:-8080}:80"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://127.0.0.1/healthz"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
